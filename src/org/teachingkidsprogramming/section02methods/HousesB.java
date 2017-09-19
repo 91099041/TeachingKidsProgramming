@@ -11,14 +11,14 @@ public class HousesB
     Tortoise.setSpeed(10);
     Tortoise.setX(200);
     int height = 40;
-    //drawHouseFlatRoof(height);
-    drawHousePointyRoof(30);
-    //drawHouseFlatRoof(120);
-    drawHousePointyRoof(150);
-    //drawHouseFlatRoof(90);
-    drawHousePointyRoof(70);
-    //drawHouseFlatRoof(20);
-    drawHousePointyRoof(100);
+    drawHouseFlatRoof(height);
+    //drawHousePointyRoof(30);
+    drawHouseFlatRoof(120);
+    //drawHousePointyRoof(150);
+    drawHouseFlatRoof(90);
+    //drawHousePointyRoof(70);
+    drawHouseFlatRoof(20);
+    //drawHousePointyRoof(100);
   }
   private static void drawHousePointyRoof(int height)
   {
