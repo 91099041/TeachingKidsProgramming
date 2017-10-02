@@ -5,7 +5,8 @@ import java.util.Random;
 import org.teachingextensions.logo.Sound;
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-public class HiLow
+//This variation tells how much errors they have left
+public class HiLow2
 {
   public static void main(String[] args)
   {
@@ -23,17 +24,17 @@ public class HiLow
       }
       else if (guess > answer)
       {
-        MessageBox.showMessage("Too high!");
+        MessageBox.showMessage("Too high!" + " " + (8 - i));
       }
       else
       {
         MessageBox.showMessage("Too low!");
+        MessageBox.showMessage("Errors left" + " " + (8 - i));
       }
       if (i == 8)
       {
         MessageBox.showMessage("You dun goofed!");
       }
-      MessageBox.showMessage("errors left" + i);
     }
   }
 }
