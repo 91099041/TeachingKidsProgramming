@@ -22,6 +22,7 @@ public class HiLow3
       {
         MessageBox.showMessage("Please enter a valid guess between 1 and" + upperRange);
         guess = MessageBox.askForNumericalInput("What is your guess?");
+        break;
       }
       if (guess == answer)
       {
