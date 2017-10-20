@@ -7,7 +7,7 @@ import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-public class ChooseYourOwnAdventure2
+public class ChooseYourOwnAdventure3
 {
   public static void main(String[] args)
   {
@@ -24,7 +24,7 @@ public class ChooseYourOwnAdventure2
     }
     else if ("explore".equalsIgnoreCase(action))
     {
-      approachOoze(action);
+      approachOoze();
     }
     else
     {
@@ -33,29 +33,37 @@ public class ChooseYourOwnAdventure2
   }
   private static void endStory()
   {
-    //      endStory (recipe below) --#6.1
-    //      ------------- Recipe for endStory --#6.2
-    //         Tell the user "You don't know how to read directions. You can't play this game. The end." --#5
     MessageBox.showMessage("You don't know how to read directions. You can't play this game. The end.");
-    //      ------------- End of endStory recipe --#6.3
   }
-  private static void approachOoze(String action)
+  private static void approachOoze()
   {
     //      approachOoze (recipe below) --#4.1
     //      ------------- Recipe for approachOoze --#4.2
-    //         Tell the user "You approach a glowing, green bucket of ooze. Worried that you will get in trouble, you pick up the bucket." --#3
     MessageBox.showMessage(
         "You approach a glowing, green bucket of ooze. Worried that you will get in trouble, you pick up the bucket.");
-    action = MessageBox.askForTextInput("Do you want to pour the ooze into the 'backyard' or 'toilet'?");
+    //         Ask the user "Do you want to pour the ooze into the 'backyard' or 'toilet'?" --#7
+    String answer = MessageBox.askForTextInput("Do you want to pour the ooze into the 'backyard' or 'toilet'?");
     //         If they answer "toilet" --#8.1
-    if ("toilet".equalsIgnoreCase(action))
+    if ("toilet".equalsIgnoreCase(answer))
     {
-      pourIntoToilet(action);
+      pourIntoToilet();
     }
-    else if ("backyard".equalsIgnoreCase(action))
+    //         Otherwise, if they answer "backyard" --#8.2
+    else if ("backyard".equalsIgnoreCase(answer))
     {
-      pourIntoBackyard(action);
+      //            pourIntoBackyard (recipe below) --#19.1
+      //            ------------- Recipe for pourIntoBackyard --#19.2
+      //                Tell the user "As you walk into the backyard a net scoops you up and a giant takes you to a boiling pot of water." --#17
+      //                Ask the user "As the man starts to prepare you as soup, do you...'Scream' or 'Faint'?" --#18
+      //                If they answer "faint" --#20.1
+      //                        Tell the user "You made a delicious soup! Yum! The end." --#21
+      //                Otherwise, if they answer "scream" --#20.2
+      //                    startStory --#22
+      //                Otherwise, if they answer anything else --#20.3
+      //                    endStory --#23
+      //         ------------- End of pourIntoBackyard recipe --#19.3
     }
+    //         Otherwise, if they answer anything else --#8.3
     else
     {
       //            endStory --#9
@@ -63,52 +71,34 @@ public class ChooseYourOwnAdventure2
     }
     //      ------------- End of approachOoze recipe --#4.3
   }
-  private static void pourIntoBackyard(String action)
+  private static void pourIntoToilet()
   {
-    //            pourIntoBackyard (recipe below) --#19.1
-    //            ------------- Recipe for pourIntoBackyard --#19.2
-    //                Tell the user "As you walk into the backyard a net scoops you up and a giant takes you to a boiling pot of water." --#17
-    MessageBox.showMessage(
-        "As you walk into the backyard a net scoops you up and a giant takes you to a boiling pot of water");
-    //                Ask the user "As the man starts to prepare you as soup, do you...'Scream' or 'Faint'?" --#18
-    action = MessageBox.askForTextInput("As the man starts to prepare you as soup, do you...'Scream' or 'Faint'?");
-    //                If they answer "faint" --#20.1
-    if ("faint".equalsIgnoreCase(action))
-    {
-      //                        Tell the user "You made a delicious soup! Yum! The end." --#21
-      MessageBox.showMessage("You made a delicious soup! Yum! The end.");
-    }
-    else if ("Scream".equalsIgnoreCase(action))
-    {
-      startStory();
-    }
-    else
-    {
-      wakeUp();
-    }
-    //         ------------- End of pourIntoBackyard recipe --#19.3
-  }
-  private static void pourIntoToilet(String action)
-  {
-    //            ------------- Recipe for pourIntoToilet --#12.2
+    String answer;
     //               Tell the user "As you pour the ooze into the toilet it backs up, gurgles, and explodes, covering you in radioactive waste." --#10
     MessageBox.showMessage(
-        "the ooze into the toilet it backs up, gurgles, and explodes, covering you in radioactive waste.");
+        "As you pour the ooze into the toilet it backs up, gurgles, and explodes, covering you in radioactive waste.");
     //               Ask the user "Do you want to train to be a NINJA?  'Yes' or 'HECK YES'?" --#11
-    action = MessageBox.askForTextInput("Do you want to train to be a NINJA?  'Yes' or 'Amen my brother'?");
+    answer = MessageBox.askForTextInput("Do you want to train to be a NINJA?  'Yes' or 'YES LORD'?");
     //               If they answer "yes" --#13.1
-    if ("Yes".equalsIgnoreCase(action))
+    if ("yes".equalsIgnoreCase(answer))
     {
+      //                    Tell the user "Awesome dude!  You live out the rest of your life fighting crimes and eating pizza!" --#14    
       MessageBox
           .showMessage("Awesome dude!  You live out the rest of your life fighting crimes and eating pizza!");
     }
-    else if ("Amen my brother".equalsIgnoreCase(action))
+    //               Otherwise, if they answer "YES LORD" --#13.2
+    else if ("YES LORD".equalsIgnoreCase(answer))
     {
-      MessageBox.showMessage(
-          "Glory to the lord. You live out the rest of your life fighting crimes with God's word and eating the holy food proclaimed great by our almmighty, all powerful Lord God.");
+      //                    Tell the user "Awesome dude!  You live out the rest of your life fighting crimes and eating pizza!" --#15
+      MessageBox
+          .showMessage("Awesome dude!  You live out the rest of your life fighting crimes and eating pizza!");
     }
-    wakeUp();
-    //            ------------- End of pourIntoToilet recipe --#12.3
+    //               Otherwise, if they answer anything else --#13.3
+    else
+    {
+      //                    endStory --#16
+      endStory();
+    }
   }
   private static void wakeUp()
   {
