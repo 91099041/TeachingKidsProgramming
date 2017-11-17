@@ -4,9 +4,31 @@ import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
-public class PentagonCrazy
+public class KnottedRing2
 {
   public static void main(String[] args)
+  {
+    Tortoise.show();
+    Tortoise.setX(600);
+    Tortoise.setY(400);
+    //      Make the tortoise move as fast as possible --#4
+    Tortoise.setSpeed(10);
+    createColorPalette();
+    //          Do the following 30 times --#10.1
+    for (int i = 0; i < 30; i++)
+    {
+      //              Change the pen color of the line the tortoise draws to the next color from the color wheel --#5
+      Tortoise.setPenColor(ColorWheel.getNextColor());
+      //              drawOctagonWithOverlap (recipe below) --#8.0
+      drawOctagonWithOverlap();
+      //       Turn the tortoise 1/30th of 360 degrees to the right --#9
+      Tortoise.turn(360 / 30);
+      //       Turn the tortoise 5 more degrees to the right --#11
+      Tortoise.turn(5);
+      //       End Repeat --#10.2
+    }
+  }
+  private static void drawOctagonWithOverlap()
   {
     Tortoise.show();
     //    Make the tortoise move as fast as possible --#3
@@ -63,5 +85,16 @@ public class PentagonCrazy
     //    Add indigo to the color wheel --#14
     ColorWheel.addColor(PenColors.Purples.Indigo);
     //    ------------- End of createColorPalette recipe --#8.3
+  }
+  private static void createColorPalette()
+  {
+    ColorWheel.addColor(PenColors.Pinks.HotPink);
+    ColorWheel.addColor(PenColors.Reds.Red);
+    ColorWheel.addColor(PenColors.Pinks.Fuchsia);
+    ColorWheel.addColor(PenColors.Reds.OrangeRed);
+    ColorWheel.addColor(PenColors.Pinks.DeepPink);
+    ColorWheel.addColor(PenColors.Reds.MediumVioletRed);
+    ColorWheel.addColor(PenColors.Reds.Crimson);
+    ColorWheel.addColor(PenColors.Reds.Tomato);
   }
 }

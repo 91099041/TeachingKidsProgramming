@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
-public class TurtleTree
+public class TurtleTree2
 {
   @SuppressWarnings("unused")
   public static void main(String[] args)
@@ -16,7 +16,7 @@ public class TurtleTree
     Tortoise.setSpeed(10);
     //    Turn the background black  --#21
     Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Black);
-    int length = 60;
+    int length = -60;
     //    drawBranch(recipe below) --#2.1
     //
     drawBranch(length);
